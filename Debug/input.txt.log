@@ -1,0 +1,27 @@
+Тест Без ошибок
+---- Протокол ------- Дата: 27.09.2019 08:48:55
+---- Параметры -------
+-log: D:\Users\Mikhail\Documents\Visual Studio 2015\Projects\LP_Lab14\Debug\input.txt.log
+-out: D:\Users\Mikhail\Documents\Visual Studio 2015\Projects\LP_Lab14\Debug\input.txtout.txt
+-in: D:\Users\Mikhail\Documents\Visual Studio 2015\Projects\LP_Lab14\Debug\input.txt
+---- Исходные данные -----
+Количество символов: 538
+Проигнорировано:     0
+Количество строк:    36
+01 tftt
+03 dt
+05 r
+08 tftt
+10 dt
+11 dtfttt
+13 r
+18 dt
+19 dt
+20 dt
+21 dt
+22 dt
+23 dt
+24 dtft
+31 p
+32 p
+33 p
