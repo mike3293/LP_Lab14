@@ -1,0 +1,7 @@
+Тест Без ошибок
+---- Протокол ------- Дата: 30.05.2019 18:02:31
+---- Параметры -------
+-log: D:\БГТУ\ProgLan\Lab10_git\x64\Debug\test.txt.log
+-out: D:\БГТУ\ProgLan\Lab10_git\x64\Debug\test.txtout.txt
+-in: D:\БГТУ\ProgLan\Lab10_git\x64\Debug\test.txt
+Ошибка 111: Недопустимый символ в исходном файле (-in), строка 1, позиция 6
