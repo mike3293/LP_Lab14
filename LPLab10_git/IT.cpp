@@ -5,7 +5,7 @@ namespace IT
 	IdTable Create(int size)
 	{
 		if (size > TI_MAXSIZE) 
-			throw ERROR_THROW(160);
+			throw ERROR_THROW(5);
 		IdTable Table;
 		Table.maxsize = size;
 		Table.size = 0;
@@ -15,7 +15,7 @@ namespace IT
 
 	void Add(IdTable& idtable, Entry entry)
 	{
-		if (idtable.size > idtable.maxsize) throw ERROR_THROW(161);
+		if (idtable.size > idtable.maxsize) throw ERROR_THROW(6);
 		idtable.table[idtable.size++] = entry;
 	}
 
@@ -28,7 +28,7 @@ namespace IT
 	{
 		for (int i = 0; i < idtable.size; i++)
 		{
-			if (_mbscmp(idtable.table[i].id, id) == 0) 
+			if (_mbscmp(idtable.table[i].idRegion, id) == 0) 
 				return i; 
 		}
 

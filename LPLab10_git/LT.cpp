@@ -4,7 +4,7 @@ namespace LT
 {
 	LexTable Create(int size)
 	{
-		if (size > LT_MAXSIZE) throw ERROR_THROW(120);
+		if (size > LT_MAXSIZE) throw ERROR_THROW(7);
 		LexTable Table;
 		Table.maxsize = size;
 		Table.size = 0;
@@ -14,7 +14,7 @@ namespace LT
 
 	void Add(LexTable& lextable, Entry entry)
 	{
-		if (lextable.size > lextable.maxsize) throw ERROR_THROW(121);
+		if (lextable.size > lextable.maxsize) throw ERROR_THROW(8);
 		lextable.table[lextable.size++] = entry;
 	}
 
@@ -38,20 +38,6 @@ namespace LT
 
 	void showTable(LexTable lextable, Log::LOG &log)		// вывод таблицы лексем
 	{
-		//int number = 1;
-		//*log.stream << "1 ";
-		//for (int i = 0; i < lextable.size; i++)
-		//{
-		//	if (lextable.table[i].sn != number) //если новая строка
-		//	{
-		//		*log.stream << std::endl << lextable.table[i].sn << " ";
-		//		number++;
-		//	}
-		//	*log.stream << lextable.table[i].lexema;
-		//	if (lextable.table[i].lexema == LEX_ID || lextable.table[i].lexema == LEX_OPERATOR || lextable.table[i].lexema == LEX_LITERAL)
-		//		*log.stream << "[" << lextable.table[i].idxTI << "]";
-		//}
-		//*log.stream << std::endl;
 		int number = 1;
 		*log.stream << "01 ";
 		for (int i = 0; i < lextable.size; i++)

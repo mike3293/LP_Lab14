@@ -70,10 +70,7 @@ namespace Log
 
 	void WriteError(LOG log, Error::ERROR error)
 	{
-		if (log.stream == nullptr 
-			
-			
-			| !log.stream->is_open() )
+		if (log.stream == nullptr || !log.stream->is_open() )
 		{
 			std::cout << "Ошибка " << error.id << ": " << error.message << ", строка " << error.inext.line << ", позиция " << error.inext.col << std::endl;
 		}
