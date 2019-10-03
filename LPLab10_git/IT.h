@@ -1,5 +1,5 @@
 #pragma once
-#define ID_MAXSIZE		10			// максимальное количество символов в идентификаторе
+#define ID_MAXSIZE		5			// максимальное количество символов в идентификаторе
 #define TI_MAXSIZE		4096		// максимальное количество строк в таблице идентификаторов
 #define TI_INT_DEFAULT	0x00000000	// значение по умолчанию для типа integer
 #define TI_STR_DEFAULT	0x00		// значение по умолчанию для типа string
@@ -13,13 +13,14 @@ namespace IT			// таблица идентификаторов
 
 	struct Entry	// строка таблицы идентификаторов
 	{
-		int			idxfirstLE;			// индекс первой строки в таблице лексем
-		unsigned char	id[ID_MAXSIZE];		// индентификатор (автоматически усекается до ID_MAXSIZE)
-		IDDATATYPE	iddatatype;			// тип данных
-		IDTYPE		idtype;				// тип идентификатора
+		int			idxfirstLE;						// индекс первой строки в таблице лексем
+		unsigned char	idRegion[TI_STR_MAXSIZE];	// префиксы для области видимости
+		unsigned char	id[ID_MAXSIZE];				// индентификатор (автоматически усекается до ID_MAXSIZE)
+		IDDATATYPE	iddatatype;						// тип данных
+		IDTYPE		idtype;							// тип идентификатора
 		union
 		{
-			int vint;					// значение integer
+			int vint;								// значение integer
 			struct
 			{
 				unsigned char len;						// количество символов в string
@@ -56,5 +57,4 @@ namespace IT			// таблица идентификаторов
 
 	void Delete(IdTable& idtable);	// удалить таблицу лексем (освободить память)
 	void showTable(IdTable& idtable);
-	void newShowTable(IdTable& idtable);
 };

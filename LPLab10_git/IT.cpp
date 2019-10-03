@@ -43,11 +43,12 @@ namespace IT
 	void showTable(IdTable& idtable)
 	{
 		int i, numberOP = 0;
-		std::cout << "№ > Идентификатор > Тип данных > Тип идентификатора > Индекс в ТЛ > Значение\n\n";
+		std::cout << "№ > Идентификатор > Область видимости > Тип данных > Тип идентификатора > Индекс в ТЛ > Значение\n\n";
 		for (i = 0; i < idtable.size; i++)
 		{
 			std::cout << i << "   ";
 			std::cout << idtable.table[i].id << "   ";
+			std::cout << idtable.table[i].idRegion << "   ";
 			switch (idtable.table[i].iddatatype)
 			{
 			case INT:

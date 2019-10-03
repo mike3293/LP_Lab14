@@ -31,6 +31,7 @@ namespace Lex
 		int line = 1;			// номер строки
 		int position = 0;		// номер позиции в исходном файле
 
+		unsigned char* startWord = new unsigned char[size_world] {NULL}; //для области видимости
 		unsigned char emptystr[] = "";	// пустая строка
 		unsigned char* RegionPrefix = new unsigned char[10]{ "" };	// текущий префикс
 		unsigned char* bufRegionPrefix = new unsigned char[10]{ "" };	// буфер для префикса
@@ -115,6 +116,7 @@ namespace Lex
 			FST::FST fstIdentif(word[i], FST_ID); //проверка на идентификатор
 			if (FST::execute(fstIdentif))
 			{
+				_mbscpy(startWord, word[i]);
 				// поиск такого же
 				if (findFunc)	// если функция
 				{
@@ -170,7 +172,8 @@ namespace Lex
 				}
 
 				entryIT.idxfirstLE = indexLex;
-				_mbscpy(entryIT.id, word[i]);
+				_mbscpy(entryIT.id, startWord);
+				_mbscpy(entryIT.idRegion, word[i]);
 				IT::Add(idtable, entryIT);
 				findFunc = false;
 				continue;
@@ -202,6 +205,7 @@ namespace Lex
 				_mbscpy(bufL, L);	// помещаем в буфер "L"
 				word[i] = _mbscat(bufL, (unsigned char*)charCountLit);	// формируем имя для литерала
 				_mbscpy(entryIT.id, word[i]);
+				_mbscpy(entryIT.idRegion, emptystr);
 				IT::Add(idtable, entryIT);
 				continue;
 			}
@@ -238,6 +242,7 @@ namespace Lex
 				_mbscpy(bufL, L);	// помещаем в буфер "L"
 				nameLiteral = _mbscat(bufL, (unsigned char*)charCountLit);	// формируем имя для литерала (L + charCountLit)
 				_mbscpy(entryIT.id, nameLiteral);
+				_mbscpy(entryIT.idRegion, emptystr);
 				IT::Add(idtable, entryIT);
 				continue;
 			}
