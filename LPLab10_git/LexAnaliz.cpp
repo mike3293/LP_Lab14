@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#define DIV '\n'
+#define DIV '|'
 #define SPACE ' '
 #define PLUS '+'
 #define MINUS '-'
@@ -35,9 +35,9 @@ namespace Lex
 		unsigned char* RegionPrefix = new unsigned char[10]{ "" };	// текущий префикс
 		unsigned char* bufRegionPrefix = new unsigned char[10]{ "" };	// буфер для префикса
 		unsigned char* oldRegionPrefix = new unsigned char[10]{ "" };	// предыдущий префикс
-		unsigned char* L = new unsigned char[2]{ "L" };
+		unsigned char* L = new unsigned char[2]{ "L" };		// начальный символ для имён литералов + \0
 		unsigned char* bufL = new unsigned char[TI_STR_MAXSIZE];
-		unsigned char* nameLiteral = new unsigned char[10]{ "" }; 
+		unsigned char* nameLiteral = new unsigned char[TI_STR_MAXSIZE]{ "" };
 		char* charCountLit = new char[10]{ "" };		// для строковой записи счетчика
 
 		bool findFunc = false;
@@ -52,7 +52,10 @@ namespace Lex
 			FST::FST fstDeclare(word[i], FST_DECLARE); // проверка на ключевое слово
 			if (FST::execute(fstDeclare))
 			{
-				LT::Entry entryLT = writeEntry(entryLT, LEX_DECLARE, LT_TI_NULLIDX, line); //создание структуры
+				LT::Entry entryLT = writeEntry
+				
+				(entryLT, LEX_DECLARE, LT_TI_NULLIDX, line); //создание структуры
+
 				LT::Add(lextable, entryLT); //добавление структуры в таблицу
 				continue;
 			}
@@ -293,7 +296,7 @@ namespace Lex
 			if (FST::execute(fstRightThesis))
 			{
 				LT::Entry entryLT = writeEntry(entryLT, LEX_RIGHTTHESIS, LT_TI_NULLIDX, line);
-				if (findParm && word[i + 1][0] != LEX_LEFTBRACE && word[i + 2][0] != LEX_LEFTBRACE)		// если после функции нет {
+				if (findParm && word[i + 1][0] != LEX_LEFTBRACE && word[i + 2][0] != LEX_LEFTBRACE && !checkBrace(word, i + 1))		// если после функции нет {
 					_mbscpy(RegionPrefix, oldRegionPrefix);		// возвращаем предыдущую обл. видимости
 				findParm = false;
 				LT::Add(lextable, entryLT);
@@ -313,10 +316,22 @@ namespace Lex
 				indexLex--;
 				continue;
 			}
-			throw ERROR_THROW_IN(162, line, position);
+			throw ERROR_THROW_IN(113, line, position);
 		}
 		lex.idtable = idtable;
 		lex.lextable = lextable;
 		return lex;
+	}
+
+	bool checkBrace(unsigned char** word, int k)
+	{
+		while (word[k][0] == DIV)
+		{
+			k++;
+		}
+		if (word[k][0] == LEX_LEFTBRACE)
+			return 1;
+		else
+			return 0;
 	}
 }

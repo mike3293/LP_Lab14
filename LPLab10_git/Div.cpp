@@ -1,7 +1,10 @@
 #include "stdafx.h"
 #include "Div.h"
 
-unsigned char** divideText(unsigned char text[], int size)		// формирование массива строк, состоящего из лексем
+unsigned char** divideText
+
+(unsigned char text[], int size)		// формирование массива строк, состоящего из лексем
+
 {
 	unsigned char** word = new unsigned char*[max_world]; //выделение памяти для разделения лексем
 	for (int i = 0; i < max_world; i++)
@@ -9,7 +12,7 @@ unsigned char** divideText(unsigned char text[], int size)		// формирование масс
 
 	bool findSP, findLit = false; //флаги сепараторов и литералов
 	int j = 0;
-	char SP[] = { " ,;(){}=+-*/\n" }; //массив сепараторов
+	char SP[] = { " ,;(){}=+-*/|" }; //массив сепараторов
 	for (int i = 0, k = 0; i < size - 1; i++, k++) //проход текста
 	{
 		findSP = false;

@@ -1,8 +1,11 @@
 #pragma once
 #include "stdafx.h"
 
+
+
 namespace Lex
 {
+	bool checkBrace(unsigned char** word, int k);
 	struct LEX
 	{
 		IT::IdTable idtable;;

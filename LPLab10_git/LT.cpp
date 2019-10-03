@@ -38,19 +38,37 @@ namespace LT
 
 	void showTable(LexTable lextable, Log::LOG &log)		// вывод таблицы лексем
 	{
+		//int number = 1;
+		//*log.stream << "1 ";
+		//for (int i = 0; i < lextable.size; i++)
+		//{
+		//	if (lextable.table[i].sn != number) //если новая строка
+		//	{
+		//		*log.stream << std::endl << lextable.table[i].sn << " ";
+		//		number++;
+		//	}
+		//	*log.stream << lextable.table[i].lexema;
+		//	if (lextable.table[i].lexema == LEX_ID || lextable.table[i].lexema == LEX_OPERATOR || lextable.table[i].lexema == LEX_LITERAL)
+		//		*log.stream << "[" << lextable.table[i].idxTI << "]";
+		//}
+		//*log.stream << std::endl;
 		int number = 1;
-		*log.stream << "1 ";
+		*log.stream << "01 ";
 		for (int i = 0; i < lextable.size; i++)
 		{
-			if (lextable.table[i].sn != number) //если новая строка
+			if (lextable.table[i].sn != number && lextable.table[i].sn != -1)
 			{
-					*log.stream << std::endl << lextable.table[i].sn << " ";
+				while (lextable.table[i].sn - number > 1)	// пока строки не станут равны
+					number++;
+				if (number < 9)
+					*log.stream << std::endl << '0' << lextable.table[i].sn << ' ';
+				else
+					*log.stream << std::endl << lextable.table[i].sn << ' ';
 				number++;
 			}
 			*log.stream << lextable.table[i].lexema;
 			if (lextable.table[i].lexema == LEX_ID || lextable.table[i].lexema == LEX_OPERATOR || lextable.table[i].lexema == LEX_LITERAL)
-				*log.stream << "[" << lextable.table[i].idxTI << "]";
+				*log.stream << "<" << lextable.table[i].idxTI << ">";
 		}
-		*log.stream << std::endl;
 	}
 }

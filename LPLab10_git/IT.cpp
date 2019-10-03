@@ -43,8 +43,7 @@ namespace IT
 	void showTable(IdTable& idtable)
 	{
 		int i, numberOP = 0;
-		std::cout << "№ > Идентификатор > Тип данных > Тип идентификатора > Индекс в ТЛ > Значение\n";
-		std::cout << std::setw(87) << '-' << std::endl;
+		std::cout << "№ > Идентификатор > Тип данных > Тип идентификатора > Индекс в ТЛ > Значение\n\n";
 		for (i = 0; i < idtable.size; i++)
 		{
 			std::cout << i << "   ";
