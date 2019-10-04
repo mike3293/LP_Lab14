@@ -13,7 +13,7 @@ namespace Log //работа с протоколом
 
 	static const LOG INITLOG = {L"",NULL};   //  структура для начальной инициализацтт LOG
 	LOG getlog(wchar_t logfile[]);		     //  сформулировать структуру LOG
-	void WriteLine(LOG log,const char* c,...);     //  вывести в протокол кокатенацию строк
+	void WriteLine(LOG log,const char* c,...);     //  вывести в протокол конкатенацию строк
 	void WriteLine(LOG, const wchar_t* c, ...);    //  вывести в протокол конкатенацию строк
 	void WriteLog(LOG log);				     //  вывести в протокол заголовок
 	void WriteParm(LOG log, Parm::PARM parm);//  вывести в протокол информацию о входных параметров

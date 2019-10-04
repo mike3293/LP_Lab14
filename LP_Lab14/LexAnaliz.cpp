@@ -179,7 +179,7 @@ namespace Lex
 						memset(entryIT.value.vstr.str, TI_STR_DEFAULT, sizeof(char));
 					}
 				}
-				else {		// если функция
+				else {		// если функция`
 					_mbscpy(oldRegionPrefix, regionPrefix);
 					_mbscpy(regionPrefix, word[i]);
 				}
