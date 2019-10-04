@@ -18,9 +18,9 @@ namespace Lex
 		LT::LexTable lextable = LT::Create(LT_MAXSIZE); //создание таблицы макс размера
 		IT::IdTable idtable = IT::Create(TI_MAXSIZE);//создание таблицы макс размера
 
-		unsigned char** word = new unsigned char*[max_world]; //выделение памяти для разделения лексем
-		for (int i = 0; i < max_world; i++)
-			word[i] = new unsigned char[size_world] {NULL};
+		unsigned char** word = new unsigned char*[MAX_WORDS]; //выделение памяти для разделения лексем
+		for (int i = 0; i < MAX_WORDS; i++)
+			word[i] = new unsigned char[WORD_SIZE] {NULL};
 		
 		word = divideText(in.text, in.size); //разделение на лексемы 
 
@@ -31,9 +31,9 @@ namespace Lex
 		int line = 1;			// номер строки
 		int position = 0;		// номер позиции в исходном файле
 
-		unsigned char* startWord = new unsigned char[size_world] {NULL}; //для области видимости
+		unsigned char* startWord = new unsigned char[WORD_SIZE] {NULL}; //для области видимости
 		unsigned char emptystr[] = "";	// пустая строка
-		unsigned char* RegionPrefix = new unsigned char[10]{ "" };	// текущий префикс
+		unsigned char* regionPrefix = new unsigned char[10]{ "" };	// текущий префикс
 		unsigned char* bufRegionPrefix = new unsigned char[10]{ "" };	// буфер для префикса
 		unsigned char* oldRegionPrefix = new unsigned char[10]{ "" };	// предыдущий префикс
 		unsigned char* L = new unsigned char[2]{ "L" };		// начальный символ для имён литералов + \0
@@ -113,21 +113,24 @@ namespace Lex
 				LT::Entry entryLT = writeEntry(entryLT, LEX_MAIN, LT_TI_NULLIDX, line);
 				LT::Add(lextable, entryLT);
 
-				_mbscpy(oldRegionPrefix, RegionPrefix);
-				_mbscpy(RegionPrefix, word[i]);
+				_mbscpy(oldRegionPrefix, regionPrefix);
+				_mbscpy(regionPrefix, word[i]);
 				position += _mbslen(word[i]) + 1;
 				continue;
 			}
 			FST::FST fstIdentif(word[i], FST_ID); //проверка на идентификатор
 			if (FST::execute(fstIdentif))
 			{
-				if(_mbslen(word[i]) > 5)
+				FST::FST fstLibFunc(word[i], FST_LIBFUNC); //проверка на substr и strlen
+
+				if((_mbslen(word[i]) > 5) && !(FST::execute(fstLibFunc)))
 					throw ERROR_THROW_IN(116, line, position);
 				_mbscpy(startWord, word[i]);
+
 				// поиск такого же
 				if (findFunc)	// если функция
 				{
-					int idx = IT::IsId(idtable, word[i]);	// ищем без префикса
+					int idx = IT::IsIDRegion(idtable, word[i]);	// ищем без префикса
 					if (idx != TI_NULLIDX)					// если такой идентификатор уже есть
 					{
 						LT::Entry entryLT = writeEntry(entryLT, LEX_ID, idx, line);
@@ -139,7 +142,7 @@ namespace Lex
 				}
 				else
 				{
-					int idx = IT::IsId(idtable, word[i]);	// ищем без префикса, а потом с префиксом
+					int idx = IT::IsIDRegion(idtable, word[i]);	// ищем без префикса, а потом с префиксом
 					if (idx != TI_NULLIDX)					// если такой идентификатор уже есть
 					{
 						LT::Entry entryLT = writeEntry(entryLT, LEX_ID, idx, line);
@@ -148,9 +151,9 @@ namespace Lex
 						position += _mbslen(word[i]) + 1;
 						continue;
 					}
-					_mbscpy(bufRegionPrefix, RegionPrefix);
+					_mbscpy(bufRegionPrefix, regionPrefix);
 					word[i] = _mbscat(bufRegionPrefix, word[i]);
-					idx = IT::IsId(idtable, word[i]);
+					idx = IT::IsIDRegion(idtable, word[i]);
 					if (idx != TI_NULLIDX)		// если такой идентификатор уже есть
 					{
 						LT::Entry entryLT = writeEntry(entryLT, LEX_ID, idx, line);
@@ -177,8 +180,8 @@ namespace Lex
 					}
 				}
 				else {		// если функция
-					_mbscpy(oldRegionPrefix, RegionPrefix);
-					_mbscpy(RegionPrefix, word[i]);
+					_mbscpy(oldRegionPrefix, regionPrefix);
+					_mbscpy(regionPrefix, word[i]);
 				}
 
 				entryIT.idxfirstLE = indexLex;
@@ -329,7 +332,7 @@ namespace Lex
 			{
 				LT::Entry entryLT = writeEntry(entryLT, LEX_RIGHTTHESIS, LT_TI_NULLIDX, line);
 				if (findParm && word[i + 1][0] != LEX_LEFTBRACE && word[i + 2][0] != LEX_LEFTBRACE && !checkBrace(word, i + 1))		// если после функции нет {
-					_mbscpy(RegionPrefix, oldRegionPrefix);		// возвращаем предыдущую обл. видимости
+					_mbscpy(regionPrefix, oldRegionPrefix);		// возвращаем предыдущую обл. видимости
 				findParm = false;
 				LT::Add(lextable, entryLT);
 				position += _mbslen(word[i]) + 1;

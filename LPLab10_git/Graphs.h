@@ -65,6 +65,21 @@
 	FST::NODE(1, FST::RELATION('n', 4)),\
 	FST::NODE()
 
+#define FST_LIBFUNC 12,	\
+	FST::NODE(2, FST::RELATION('s', 1), FST::RELATION('s', 6)),\
+	FST::NODE(1, FST::RELATION('t', 2)),\
+	FST::NODE(1, FST::RELATION('r', 3)),\
+	FST::NODE(1, FST::RELATION('l', 4)),\
+	FST::NODE(1, FST::RELATION('e', 5)),\
+	FST::NODE(1, FST::RELATION('n', 11)),\
+	\
+	FST::NODE(1, FST::RELATION('u', 7)),\
+	FST::NODE(1, FST::RELATION('b', 8)),\
+	FST::NODE(1, FST::RELATION('s', 9)), \
+	FST::NODE(1, FST::RELATION('t', 10)), \
+	FST::NODE(1, FST::RELATION('r', 11)), \
+	FST::NODE()
+
 #define FST_ID 3,	\
 	FST::NODE(52,	\
 	FST::RELATION('a', 1), FST::RELATION('b', 1), FST::RELATION('c', 1), FST::RELATION('d', 1), FST::RELATION('e', 1), FST::RELATION('f', 1),\

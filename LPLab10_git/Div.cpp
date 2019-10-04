@@ -3,9 +3,9 @@
 
 unsigned char** divideText(unsigned char text[], int size)		// формирование массива строк, состоящего из лексем
 {
-	unsigned char** word = new unsigned char*[max_world]; //выделение памяти для разделения лексем
-	for (int i = 0; i < max_world; i++)
-		word[i] = new unsigned char[size_world] {NULL};
+	unsigned char** word = new unsigned char*[MAX_WORDS]; //выделение памяти для разделения лексем
+	for (int i = 0; i < MAX_WORDS; i++)
+		word[i] = new unsigned char[WORD_SIZE] {NULL};
 
 	bool findSP, findLit = false; //флаги сепараторов и литералов
 	int j = 0;

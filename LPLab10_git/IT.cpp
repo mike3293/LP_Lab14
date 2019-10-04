@@ -24,7 +24,7 @@ namespace IT
 		return idtable.table[n];
 	}
 
-	int IsId(IdTable& idtable, unsigned char id[ID_MAXSIZE])
+	int IsIDRegion(IdTable& idtable, unsigned char id[ID_MAXSIZE])
 	{
 		for (int i = 0; i < idtable.size; i++)
 		{
@@ -46,32 +46,32 @@ namespace IT
 		std::cout << "№ > Идентификатор > Область видимости > Тип данных > Тип идентификатора > Индекс в ТЛ > Значение\n\n";
 		for (i = 0; i < idtable.size; i++)
 		{
-			std::cout << i << "   ";
-			std::cout << idtable.table[i].id << "   ";
-			std::cout << idtable.table[i].idRegion << "   ";
+			std::cout << i << " > ";
+			std::cout << idtable.table[i].id << " > ";
+			std::cout << idtable.table[i].idRegion << " > ";
 			switch (idtable.table[i].iddatatype)
 			{
 			case INT:
 				if (!(idtable.table[i].idtype == OP))
-					std::cout << "integer" << "   "; break;
+					std::cout << "integer" << " > "; break;
 			case STR:
 				if (!(idtable.table[i].idtype == OP))
-					std::cout << "string" << "   "; break;
-			default: std::cout << "unknown" << "   "; break;
+					std::cout << "string" << " > "; break;
+			default: std::cout << "unknown" << " > "; break;
 			}
 			switch (idtable.table[i].idtype)
 			{
-			case V: std::cout << "переменная   "; break;
-			case F: std::cout << "функция   "; break;
-			case P: std::cout << "параметр   "; break;
-			case L: std::cout << "литерал   "; break;
+			case V: std::cout << "переменная > "; break;
+			case F: std::cout << "функция > "; break;
+			case P: std::cout << "параметр > "; break;
+			case L: std::cout << "литерал > "; break;
 			case OP: 
-				std::cout << "оператор   ";
+				std::cout << "оператор > ";
 				numberOP++;
 				break;
-			default: std::cout << "unknown   "; break;
+			default: std::cout << "unknown > "; break;
 			}
-			std::cout << idtable.table[i].idxfirstLE << "   ";
+			std::cout << idtable.table[i].idxfirstLE << " > ";
 			if (idtable.table[i].iddatatype == INT && (idtable.table[i].idtype == V || idtable.table[i].idtype == L))
 				std::cout << std::left << idtable.table[i].value.vint;
 			else if (idtable.table[i].iddatatype == STR && (idtable.table[i].idtype == V || idtable.table[i].idtype == L))

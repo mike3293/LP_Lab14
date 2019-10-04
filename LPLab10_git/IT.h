@@ -50,7 +50,7 @@ namespace IT			// таблица идентификаторов
 		int n				// номер получаемой строки
 	);
 
-	int IsId(				// возврат: номер строки (если есть), TI_NULLIDX (если нет)
+	int IsIDRegion(				// возврат: номер строки (если есть), TI_NULLIDX (если нет)
 		IdTable& idtable,	// экземпляр таблицы идентификаторов
 		unsigned char id[ID_MAXSIZE]	// идентификатор
 	);
