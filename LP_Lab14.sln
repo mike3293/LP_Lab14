@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LPLab10_git", "LPLab10_git\LPLab10_git.vcxproj", "{84FE1060-B0E2-4AE4-8E44-C32AD719108C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LP_Lab14", "LP_Lab14\LP_Lab14.vcxproj", "{84FE1060-B0E2-4AE4-8E44-C32AD719108C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
