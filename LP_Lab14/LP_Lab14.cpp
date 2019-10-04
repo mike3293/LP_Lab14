@@ -19,7 +19,7 @@ int _tmain(int argc, _TCHAR ** argv)
 		IT::showTable(lex.idtable);
 		LT::Delete(lex.lextable);
 		IT::Delete(lex.idtable);
-		system("pause");
+		//system("pause");
 		Log::Close(log);
 	}
 	catch (Error::ERROR e)

@@ -26,13 +26,13 @@ namespace In
 		unsigned char * Ptemp = Info.text;							//указатель на участок пямати
 		for (int i = 0; i < fulltext.size(); ++i)
 		{
-			if (Info.code[(unsigned char)fulltext[i]] == IN::F) //Если запр символ => ошибка
+			if ((Info.code[(unsigned char)fulltext[i]] == IN::F)) //Если запрещённый символ => ошибка
 			{
 				throw ERROR_THROW_IN(111, currentLine, currentCol)
 			}
 			else if (Info.code[(unsigned char)fulltext[i]] == IN::I) // Если игнор символ 
 				++Info.ignor;
-			else if (Info.code[(unsigned char)fulltext[i]] == IN::T)// Если разрешенный символ 
+			else if ((Info.code[(unsigned char)fulltext[i]] == IN::T) || (Info.code[(unsigned char)fulltext[i]] == IN::S))// Если разрешенный символ 
 			{
 				*Ptemp = fulltext[i];
 				++Ptemp;
@@ -53,35 +53,7 @@ namespace In
 		*Ptemp = IN_CODE_ENDL;										//признак конца строки
 		Info.size = strlen((char*)Info.text) ;			//количество символо = количество всех элем - \n
 		unsigned char *str = new unsigned char[Info.size];
-		//for (int i = 0,j = 0; i < Info.size + Info.lines; i++)
-		//	if (Info.text[i] == '|')
-		//	{
-		//		
-		//		str[j] = '\0';
-		//		j = 0;
-		//		FST::FST fst(
-		//			str,
-		//			8,
-		//			/*0*/	FST::NODE(1, FST::RELATION('i', 1)),
-		//			/*1*/	FST::NODE(4, FST::RELATION('w', 1), FST::RELATION('w', 2), FST::RELATION('w', 4), FST::RELATION('w', 5)),
-		//			/*2*/	FST::NODE(3, FST::RELATION('a', 3), FST::RELATION('c', 3), FST::RELATION('C', 3)),
-		//			/*3*/	FST::NODE(4, FST::RELATION('w', 5), FST::RELATION('w', 4), FST::RELATION('w', 3), FST::RELATION('w', 2)),
-		//			/*4*/	FST::NODE(2, FST::RELATION('w', 4), FST::RELATION('w', 5)),
-		//			/*5*/	FST::NODE(1, FST::RELATION('r', 6)),
-		//			/*5*/	FST::NODE(1, FST::RELATION(';', 7)),
-		//			FST::NODE()
-		//		);
-		//		
-		//		if (execute(fst) == true)
-		//			out << str << std::endl;
-		//		else std::cout << str << " Ошибка разбора" << std::endl;
-		//	}
-		//	else if (Info.text[i] != '\n')
-		//	{
-		//		str[j] = Info.text[i];
-		//		j++;
-		//	}
-		
+		out << Info.text;
 		out.close();
 		in.close();
 		return Info;

@@ -15,11 +15,11 @@ int _tmain(int argc, _TCHAR ** argv)
 		In::IN in = In::getin(parm.in, parm.out);
 		Log::WriteIn(log, in);
 
-		unsigned char* test = new unsigned char[22]{ "define integer abcd6|" };
+		/*unsigned char* test = new unsigned char[22]{ "define integer abcd6|" };
 		in.text = test;
-		Lex::LEX lex = Lex::lexAnaliz(log, in);
+		Lex::LEX lex = Lex::lexAnaliz(log, in);*/
 
-		//LT::LexTable lextable = LT::Create(LT_MAXSIZE+1); //создание таблицы макс размера
+		LT::LexTable lextable = LT::Create(LT_MAXSIZE+1); //создание таблицы макс размера
 
 		//IT::IdTable idtable = IT::Create(TI_MAXSIZE+1);//создание таблицы макс размера
 
