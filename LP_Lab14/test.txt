@@ -16,6 +16,7 @@ string  function fs (string a, string b)
 main
 {
  declare integer x;
+ declare integer x;
  declare integer y;
  declare integer z;
  declare string sa;

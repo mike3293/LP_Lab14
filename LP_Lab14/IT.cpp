@@ -37,6 +37,8 @@ namespace IT
 
 	void Delete(IdTable& idtable)
 	{
+		idtable.maxsize = NULL;
+		idtable.size = NULL;
 		delete[] idtable.table;
 	}
 

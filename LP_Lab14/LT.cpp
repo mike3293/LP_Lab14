@@ -25,6 +25,8 @@ namespace LT
 
 	void Delete(LexTable& lextable)
 	{
+		lextable.maxsize = NULL;
+		lextable.size = NULL;
 		delete[] lextable.table;
 	}
 

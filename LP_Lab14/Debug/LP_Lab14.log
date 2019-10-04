@@ -1,45 +1,45 @@
-﻿D:\Program Files\visualstudio\vs2017\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (LPLab10_git.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+﻿C:\Program Files\visualstudio\vs2017\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (LPLab10_git.vcxproj).  Это может привести к ошибкам очистки и перестроения.
   LexAnaliz.cpp
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(79): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(116): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(117): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(128): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(154): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(155): warning C4996: '_mbscat': This function or variable may be unsafe. Consider using _mbscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(106): note:  см. объявление "_mbscat"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(183): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(184): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(188): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(189): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(223): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(224): warning C4996: '_mbscat': This function or variable may be unsafe. Consider using _mbscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(106): note:  см. объявление "_mbscat"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(225): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(226): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(258): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(265): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(266): warning C4996: '_mbscat': This function or variable may be unsafe. Consider using _mbscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(106): note:  см. объявление "_mbscat"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(267): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(268): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(280): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-d:\users\mikhail\documents\visual studio 2015\projects\lp_lab14\lp_lab14\lexanaliz.cpp(335): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  d:\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
-  LP_Lab14.vcxproj -> D:\Users\Mikhail\Documents\Visual Studio 2015\Projects\LP_Lab14\Debug\LP_Lab14.exe
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(81): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(122): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(123): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(134): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(161): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(162): warning C4996: '_mbscat': This function or variable may be unsafe. Consider using _mbscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(106): note:  см. объявление "_mbscat"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(192): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(193): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(197): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(198): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(236): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(237): warning C4996: '_mbscat': This function or variable may be unsafe. Consider using _mbscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(106): note:  см. объявление "_mbscat"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(238): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(239): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(258): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(265): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(266): warning C4996: '_mbscat': This function or variable may be unsafe. Consider using _mbscat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(106): note:  см. объявление "_mbscat"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(267): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(268): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(281): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+c:\users\admin\desktop\lp\lp_lab14\lp_lab14\lexanaliz.cpp(341): warning C4996: '_mbscpy': This function or variable may be unsafe. Consider using _mbscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\mbstring.h(190): note:  см. объявление "_mbscpy"
+  LP_Lab14.vcxproj -> C:\Users\admin\Desktop\LP\LP_Lab14\Debug\LP_Lab14.exe

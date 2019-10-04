@@ -13,8 +13,11 @@ int _tmain(int argc, _TCHAR ** argv)
 		In::IN in = In::getin(parm.in,parm.out);
 		Log::WriteIn(log, in);
 		Lex::LEX lex = Lex::lexAnaliz(log, in);
+
 		LT::showTable(lex.lextable,log);
 		IT::showTable(lex.idtable);
+		LT::Delete(lex.lextable);
+		IT::Delete(lex.idtable);
 		system("pause");
 		Log::Close(log);
 	}
