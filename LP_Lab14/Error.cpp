@@ -9,8 +9,8 @@ namespace Error
 	{
 		ERROR_ENTRY(0,"Недопустимый код ошибки"), //код ошибки вне диапазона 0 - ERROR_MAX_ENTRY
 		ERROR_ENTRY(1,"Системный сбой"),
-		ERROR_ENTRY_NODEF(2),ERROR_ENTRY_NODEF(3),ERROR_ENTRY_NODEF(4),ERROR_ENTRY(5,"IT maxsize = 4096"),
-		ERROR_ENTRY(6,"Таблица идентификаторов переполнена"),ERROR_ENTRY(7,"LT maxsize = 4096"),ERROR_ENTRY(8,"Таблица лексем переполнена"), ERROR_ENTRY_NODEF(9),
+		ERROR_ENTRY_NODEF(2),ERROR_ENTRY_NODEF(3),ERROR_ENTRY_NODEF(4),ERROR_ENTRY(5,"Ошибка, максимальный размер таблицы идентификаторов 4096"),
+		ERROR_ENTRY(6,"Таблица идентификаторов переполнена"),ERROR_ENTRY(7,"Ошибка, максимальный размер таблицы лексем 4096"),ERROR_ENTRY(8,"Таблица лексем переполнена"), ERROR_ENTRY_NODEF(9),
 		ERROR_ENTRY_NODEF10(10),ERROR_ENTRY_NODEF10(20),ERROR_ENTRY_NODEF10(30),ERROR_ENTRY_NODEF10(40),ERROR_ENTRY_NODEF10(50),
 		ERROR_ENTRY_NODEF10(60),ERROR_ENTRY_NODEF10(70),ERROR_ENTRY_NODEF10(80),ERROR_ENTRY_NODEF10(90),
 		ERROR_ENTRY(100,"Параметр -in должен быть задан"),

@@ -5,6 +5,8 @@
 
 #pragma once
 
+//#define TEST
+
 #include "targetver.h"
 
 #include <stdio.h>
