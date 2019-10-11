@@ -25,6 +25,8 @@ int _tmain(int argc, _TCHAR ** argv)
 	catch (Error::ERROR e)
 	{
 		Log::WriteError(log, e);
+		std::cout << e.message << std::endl;
+		system("pause");
 	}
 	return 0;
 }

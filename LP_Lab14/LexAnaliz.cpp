@@ -131,7 +131,7 @@ namespace Lex
 					int idx = IT::IsIDRegion(idtable, word[i]);	// ищем без префикса
 					if (idx != TI_NULLIDX)						// если такой идентификатор уже есть
 					{
-						if (lextable.table[indexLex-2].lexema == LEX_DECLARE)
+						if (lextable.table[indexLex-1].lexema == LEX_FUNCTION)
 							throw ERROR_THROW_IN(114, line, position);
 						LT::Entry entryLT;
 						writeEntry(entryLT, LEX_ID, idx, line);
@@ -159,6 +159,8 @@ namespace Lex
 					idx = IT::IsIDRegion(idtable, word[i]);
 					if (idx != TI_NULLIDX)		// если такой идентификатор уже есть
 					{
+						if (lextable.table[indexLex - 2].lexema == LEX_DECLARE)
+							throw ERROR_THROW_IN(114, line, position);
 						LT::Entry entryLT;
 						writeEntry(entryLT, LEX_ID, idx, line);
 						LT::Add(lextable, entryLT);

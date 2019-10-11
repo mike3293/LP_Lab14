@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "Div.h"
 
 unsigned char** divideText(In::IN in)		// формирование массива строк, состоящего из лексем
 {
@@ -11,14 +10,13 @@ unsigned char** divideText(In::IN in)		// формирование массива строк, состоящего
 
 	bool findSP, findLit = false; //флаги сепараторов и литералов
 	int j = 0;
-	//char SP[] = { " ,;(){}=+-*/|" }; //массив сепараторов
+
 	for (int i = 0, k = 0; i < size - 1; i++, k++) //проход текста
 	{
 		findSP = false;
 		if (text[i] == '\'') //если найден литерал
 			findLit = !findLit;
-		//for (int t = 0; t < sizeof(SP) - 1; t++) //проверка на сепаратор
-		//{
+
 			if (((in.code[(unsigned char)text[i]] == In::IN::S) || (text[i] == DIV)) && !findLit) //проверка на сепаратор
 			{
 				findSP = true;				  
