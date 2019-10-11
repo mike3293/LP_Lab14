@@ -3,5 +3,6 @@
 
 #define MAX_WORDS 1024
 #define WORD_SIZE 20
+#define DIV '|'
 
-unsigned char** divideText(unsigned char source[], int size);
+unsigned char** divideText(In::IN in);

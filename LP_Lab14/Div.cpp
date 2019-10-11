@@ -1,41 +1,42 @@
 #include "stdafx.h"
 #include "Div.h"
 
-unsigned char** divideText(unsigned char text[], int size)		// формирование массива строк, состоящего из лексем
+unsigned char** divideText(In::IN in)		// формирование массива строк, состоящего из лексем
 {
+	int size = in.size;
+	unsigned char* text = in.text;
 	unsigned char** word = new unsigned char*[MAX_WORDS]; //выделение памяти для разделения лексем
 	for (int i = 0; i < MAX_WORDS; i++)
 		word[i] = new unsigned char[WORD_SIZE] {NULL};
 
 	bool findSP, findLit = false; //флаги сепараторов и литералов
 	int j = 0;
-	char SP[] = { " ,;(){}=+-*/|" }; //массив сепараторов
+	//char SP[] = { " ,;(){}=+-*/|" }; //массив сепараторов
 	for (int i = 0, k = 0; i < size - 1; i++, k++) //проход текста
 	{
 		findSP = false;
 		if (text[i] == '\'') //если найден литерал
 			findLit = !findLit;
-		for (int t = 0; t < sizeof(SP) - 1; t++) //проверка на сепаратор
-		{
-			if ((text[i] == SP[t] ) && !findLit) //проверка на сепаратор
+		//for (int t = 0; t < sizeof(SP) - 1; t++) //проверка на сепаратор
+		//{
+			if (((in.code[(unsigned char)text[i]] == In::IN::S) || (text[i] == DIV)) && !findLit) //проверка на сепаратор
 			{
 				findSP = true;				  
 				if (word[j][0] != NULL)
 				{
-					word[j++][k] = '\0'; //признак завершенности слова
+					word[j++][k] = IN_CODE_ENDL; //признак завершенности слова
 					k = 0;
 				}
-				if (SP[t] == ' ') //если пробел - пропускаем
+				if (text[i] == ' ') //если пробел - пропускаем
 				{
 					k = -1;
-					break;
+					continue;
 				}
-				word[j][k++] = SP[t]; //запись сепаратора
-				word[j++][k] = '\0'; //признак завершения разбора лексемы
+				word[j][k++] = text[i]; //запись сепаратора
+				word[j++][k] = IN_CODE_ENDL; //признак завершения разбора лексемы
 				k = -1;
-				break;
 			}
-		}
+		//}
 		if (!findSP)		//если не сепаратор
 			word[j][k] = text[i];		//переписывем
 	}

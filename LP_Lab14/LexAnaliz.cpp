@@ -1,13 +1,5 @@
 #include "stdafx.h"
 
-#define DIV '|'
-#define SPACE ' '
-#define PLUS '+'
-#define MINUS '-'
-#define STAR '*'
-#define DIRSLASH '/'
-#define EQUAL '='
-
 using namespace std;
 
 namespace Lex
@@ -22,7 +14,7 @@ namespace Lex
 		for (int i = 0; i < MAX_WORDS; i++)
 			word[i] = new unsigned char[WORD_SIZE] {NULL};
 		
-		word = divideText(in.text, in.size); //разделение на лексемы 
+		word = divideText(in); //разделение на лексемы 
 
 
 		int indexLex = 0;		// индекс лексемы
@@ -139,6 +131,8 @@ namespace Lex
 					int idx = IT::IsIDRegion(idtable, word[i]);	// ищем без префикса
 					if (idx != TI_NULLIDX)						// если такой идентификатор уже есть
 					{
+						if (lextable.table[indexLex-2].lexema == LEX_DECLARE)
+							throw ERROR_THROW_IN(114, line, position);
 						LT::Entry entryLT;
 						writeEntry(entryLT, LEX_ID, idx, line);
 						LT::Add(lextable, entryLT);
@@ -152,6 +146,8 @@ namespace Lex
 					int idx = IT::IsIDRegion(idtable, word[i]);	
 					if (idx != TI_NULLIDX)					
 					{
+						if (lextable.table[indexLex - 2].lexema == LEX_DECLARE)
+							throw ERROR_THROW_IN(114, line, position);
 						LT::Entry entryLT;
 						writeEntry(entryLT, LEX_ID, idx, line);
 						LT::Add(lextable, entryLT);
