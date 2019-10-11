@@ -15,11 +15,18 @@ int _tmain(int argc, _TCHAR ** argv)
 		Log::WriteIn(log, in);
 		Lex::LEX lex = Lex::lexAnaliz(log, in);
 
+		bool rc = PolishNotation(17, lex);
+		if (rc)
+			std::cout << "Польская запись построена" << std::endl;
+		else
+			std::cout << "Польская запись не построена" << std::endl;
 		LT::showTable(lex.lextable, log);
+
+		/*LT::showTable(lex.lextable, log);
 		IT::showTable(lex.idtable);
 		LT::Delete(lex.lextable);
-		IT::Delete(lex.idtable);
-		//system("pause");
+		IT::Delete(lex.idtable);*/
+		system("pause");
 		Log::Close(log);
 	}
 	catch (Error::ERROR e)

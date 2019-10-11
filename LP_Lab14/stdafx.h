@@ -32,6 +32,7 @@
 #include "Div.h"
 #include "Graphs.h"
 #include "LexAnaliz.h"
+#include "PolishNotation.h"
 
 
 // TODO: Установите здесь ссылки на дополнительные заголовки, требующиеся для программы
