@@ -1,5 +1,11 @@
 #include "stdafx.h"
 
+#define PLUS '+'
+#define MINUS '-'
+#define STAR '*'
+#define SLASH '/'
+#define EQUAL '='
+
 using namespace std;
 
 namespace Lex
@@ -274,7 +280,15 @@ namespace Lex
 			{
 				LT::Entry entryLT;
 				writeEntry(entryLT, LEX_OPERATOR, indexID++, line);
-				
+				switch (word[i][0])
+				{
+				case PLUS: case MINUS:
+					entryLT.priority = 2;
+					break;
+				case SLASH: case STAR:
+					entryLT.priority = 3;
+					break;
+				}
 				LT::Add(lextable, entryLT);
 				_mbscpy(entryIT.id, word[i]);
 				entryIT.idxfirstLE = indexLex;
@@ -324,6 +338,7 @@ namespace Lex
 			{
 				LT::Entry entryLT;
 				writeEntry(entryLT, LEX_LEFTTHESIS, LT_TI_NULLIDX, line);
+				entryLT.priority = 0;
 				LT::Add(lextable, entryLT);
 				if (idtable.table[indexID - 1].idtype == IT::F)
 					findParm = true;
@@ -335,6 +350,8 @@ namespace Lex
 			{
 				LT::Entry entryLT;
 				writeEntry(entryLT, LEX_RIGHTTHESIS, LT_TI_NULLIDX, line);
+				entryLT.priority = 0;
+
 				if (findParm && word[i + 1][0] != LEX_LEFTBRACE && word[i + 2][0] != LEX_LEFTBRACE && !checkBrace(word, i + 1))		// если после функции нет {
 					_mbscpy(regionPrefix, oldRegionPrefix);		// возвращаем предыдущую обл. видимости
 				findParm = false;
