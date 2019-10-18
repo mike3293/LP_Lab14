@@ -14,8 +14,9 @@ int _tmain(int argc, _TCHAR ** argv)
 		In::IN in = In::getin(parm.in, parm.out);
 		Log::WriteIn(log, in);
 		Lex::LEX lex = Lex::lexAnaliz(log, in);
-
-		bool rc = PolishNotation(17, lex);
+		IT::showTable(lex.idtable);
+		//bool rc = PolishNotation(17, lex);
+		bool rc = PolishNotation(64, lex);
 		if (rc)
 			std::cout << "Польская запись построена" << std::endl;
 		else
