@@ -338,7 +338,7 @@ namespace Lex
 			{
 				LT::Entry entryLT;
 				writeEntry(entryLT, LEX_LEFTTHESIS, LT_TI_NULLIDX, line);
-				entryLT.priority = 0;
+				entryLT.priority = 1;
 				LT::Add(lextable, entryLT);
 				if (idtable.table[indexID - 1].idtype == IT::F)
 					findParm = true;
@@ -350,7 +350,7 @@ namespace Lex
 			{
 				LT::Entry entryLT;
 				writeEntry(entryLT, LEX_RIGHTTHESIS, LT_TI_NULLIDX, line);
-				entryLT.priority = 0;
+				entryLT.priority = 1;
 
 				if (findParm && word[i + 1][0] != LEX_LEFTBRACE && word[i + 2][0] != LEX_LEFTBRACE && !checkBrace(word, i + 1))		// если после функции нет {
 					_mbscpy(regionPrefix, oldRegionPrefix);		// возвращаем предыдущую обл. видимости

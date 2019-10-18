@@ -1,7 +1,7 @@
 integer  function fi(integer x, integer y)
 {
- declare  integer z123;
- z= (y + x) * 2;
+ declare  integer z;
+ z = 3 + (y + x) * 2;
  return z; 
 };  
 

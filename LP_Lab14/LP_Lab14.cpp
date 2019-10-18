@@ -14,19 +14,21 @@ int _tmain(int argc, _TCHAR ** argv)
 		In::IN in = In::getin(parm.in, parm.out);
 		Log::WriteIn(log, in);
 		Lex::LEX lex = Lex::lexAnaliz(log, in);
-
+		IT::showTable(lex.idtable);
+		
 		bool rc = PolishNotation(17, lex);
 		if (rc)
-			std::cout << "Польская запись построена" << std::endl;
+			std::cout << "\nПольская запись построена" << std::endl;
 		else
-			std::cout << "Польская запись не построена" << std::endl;
+			std::cout << "\nПольская запись не построена" << std::endl;
+		
 		LT::showTable(lex.lextable, log);
 
 		/*LT::showTable(lex.lextable, log);
 		IT::showTable(lex.idtable);
 		LT::Delete(lex.lextable);
 		IT::Delete(lex.idtable);*/
-		system("pause");
+		//system("pause");
 		Log::Close(log);
 	}
 	catch (Error::ERROR e)
