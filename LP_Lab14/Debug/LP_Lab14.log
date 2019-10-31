@@ -1,3 +1,3 @@
 ﻿C:\Program Files\visualstudio\vs2017\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (LPLab10_git.vcxproj).  Это может привести к ошибкам очистки и перестроения.
-  PolishNotation.cpp
+  Greibach.cpp
   LP_Lab14.vcxproj -> C:\Users\admin\Desktop\LP\LP_Lab14\Debug\LP_Lab14.exe

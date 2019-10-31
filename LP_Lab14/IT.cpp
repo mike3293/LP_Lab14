@@ -82,7 +82,7 @@ namespace IT
 				std::cout << "нет значения";
 			std::cout << std::endl;
 		}
-		std::cout << std::setfill('*') << std::setw(40) << '*' << std::endl;
+		std::cout << std::setfill('*') << std::setw(40) << '*' <<std::setfill(' ')<<std::setw(1) << std::endl;
 		std::cout << "Количество идентификаторов: " << i - numberOP << std::endl;
 	}
 }

@@ -21,6 +21,7 @@
 #include <locale>
 #include <cwchar>
 #include <mbstring.h>
+#include <stack>
 
 #include "Log.h"
 #include "Error.h"
@@ -33,6 +34,9 @@
 #include "Graphs.h"
 #include "LexAnaliz.h"
 #include "PolishNotation.h"
+#include "Greibach.h"
+#include "MFST.h"
+
 
 
 // TODO: Установите здесь ссылки на дополнительные заголовки, требующиеся для программы

@@ -1,6 +1,4 @@
 #include "stdafx.h"
-#include "LexAnaliz.h"
-#include <stack>
 #include <queue>
 
 using namespace std;

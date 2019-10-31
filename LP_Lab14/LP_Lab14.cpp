@@ -16,17 +16,29 @@ int _tmain(int argc, _TCHAR ** argv)
 		Lex::LEX lex = Lex::lexAnaliz(log, in);
 		IT::showTable(lex.idtable);
 		//bool rc = PolishNotation(17, lex);
-		bool rc = PolishNotation(64, lex);
+		/*bool rc = PolishNotation(64, lex);
 		if (rc)
 			std::cout << "Польская запись построена" << std::endl;
 		else
 			std::cout << "Польская запись не построена" << std::endl;
-		LT::showTable(lex.lextable, log);
+		LT::showTable(lex.lextable, log);*/
 
 		/*LT::showTable(lex.lextable, log);
 		IT::showTable(lex.idtable);
 		LT::Delete(lex.lextable);
 		IT::Delete(lex.idtable);*/
+
+		unsigned int start_time = clock();
+		MFST::Mfst mfst(lex, GRB::getGreibach());
+		mfst.start();
+		unsigned int end_time = clock();
+		unsigned int search_time = end_time - start_time;
+		std::cout << search_time << std::endl;
+		mfst.savededucation();
+		mfst.printrules();
+		LT::showTable(lex.lextable, log);
+		IT::showTable(lex.idtable);
+
 		system("pause");
 		Log::Close(log);
 	}
