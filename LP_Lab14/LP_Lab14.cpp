@@ -34,10 +34,10 @@ int _tmain(int argc, _TCHAR ** argv)
 		unsigned int end_time = clock();
 		unsigned int search_time = end_time - start_time;
 		std::cout << search_time << std::endl;
-		mfst.savededucation();
-		mfst.printrules();
-		LT::showTable(lex.lextable, log);
-		IT::showTable(lex.idtable);
+		//mfst.savededucation();
+		// mfst.printrules();
+		/*LT::showTable(lex.lextable, log);
+		IT::showTable(lex.idtable);*/
 
 		system("pause");
 		Log::Close(log);

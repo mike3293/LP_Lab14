@@ -26,12 +26,17 @@ namespace Error
 		ERROR_ENTRY_NODEF10(120),ERROR_ENTRY_NODEF10(130),ERROR_ENTRY_NODEF10(140),ERROR_ENTRY_NODEF10(150),
 		ERROR_ENTRY_NODEF10(160),ERROR_ENTRY_NODEF10(170),ERROR_ENTRY_NODEF10(180),ERROR_ENTRY_NODEF10(190),
 		ERROR_ENTRY_NODEF100(200),ERROR_ENTRY_NODEF100(300),ERROR_ENTRY_NODEF100(400),ERROR_ENTRY_NODEF100(500),
-		ERROR_ENTRY_NODEF100(600),ERROR_ENTRY_NODEF100(700),ERROR_ENTRY_NODEF100(800),ERROR_ENTRY_NODEF100(900),
+		ERROR_ENTRY(600, "Íåâåğíàÿ ñòğóêòóğà ïğîãğàììû"),
+		ERROR_ENTRY(601, "Îøèáî÷íûé îïåğàòîğ"),
+		ERROR_ENTRY(602, "Îøèáêà â âûğàæåíèè"),
+		ERROR_ENTRY(603, "Îøèáêà â ïàğàìåòğàõ ôóíêöèè"),
+		ERROR_ENTRY(604, "Îøèáêà â ïàğàìåòğàõ âûçûâàåìîé ôóíêöèè"),
+		ERROR_ENTRY_NODEF100(700),ERROR_ENTRY_NODEF100(800),ERROR_ENTRY_NODEF100(900),
 	};
 	ERROR geterror(int id)
 	{
 		ERROR error_info ;												// ñîçäàíèå ñòğóêòóğû êîòîğóş íàäî áóäåò âåğíóòü
-		if (id > 0 && id < ERROR_MAXSIZE_MESSAGE)						// ñğàâíèâàíèå äèàïàçîíà
+		if (id > 0 && id < ERROR_MAX_ENTRY)						// ñğàâíèâàíèå äèàïàçîíà
 		{ 
 			error_info.id = errors[id].id;
 			strcpy_s(error_info.message, errors[id].message);
@@ -49,7 +54,7 @@ namespace Error
 	ERROR geterrorin(int id, int line, int col)
 	{
 		ERROR error_info;												//	ñîçäàíèå ñòğóêòóğó êîòîğóş íàäî áóäåò âåğíóòü
-		if (id > 0 && id < ERROR_MAXSIZE_MESSAGE)						// ñğàâíåíèå äèàïàçîíà
+		if (id > 0 && id < ERROR_MAX_ENTRY)						// ñğàâíåíèå äèàïàçîíà
 		{
 			error_info.id = errors[id].id;
 			error_info.inext.col = col;
