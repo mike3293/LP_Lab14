@@ -30,7 +30,7 @@ int _tmain(int argc, _TCHAR ** argv)
 
 		MFST::Mfst mfst(lex, GRB::getGreibach());
 		mfst.start();
-		mfst.savededucation();
+		// mfst.savededucation();
 		mfst.printrules();
 		/*LT::showTable(lex.lextable, log);
 		IT::showTable(lex.idtable);*/
