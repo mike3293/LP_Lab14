@@ -28,14 +28,10 @@ int _tmain(int argc, _TCHAR ** argv)
 		LT::Delete(lex.lextable);
 		IT::Delete(lex.idtable);*/
 
-		unsigned int start_time = clock();
 		MFST::Mfst mfst(lex, GRB::getGreibach());
 		mfst.start();
-		unsigned int end_time = clock();
-		unsigned int search_time = end_time - start_time;
-		std::cout << search_time << std::endl;
-		//mfst.savededucation();
-		// mfst.printrules();
+		mfst.savededucation();
+		mfst.printrules();
 		/*LT::showTable(lex.lextable, log);
 		IT::showTable(lex.idtable);*/
 
